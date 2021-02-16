@@ -26,54 +26,48 @@ import {
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One guys</Text>
-              <Text style={styles.sectionDescription}>
-              <Text>hello world.....</Text>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+    <View style={styles.container}>
+      <View style={styles.content}>
+      </View>
+      <View style={styles.bottomBar}>
+        <View style={{backgroundColor: 'yellow', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{backgroundColor: 'white', height:26, width:26}}>
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+          <Text>Home</Text>
+        </View>
+        <View style={{backgroundColor: 'green', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Orders</Text>
+        </View>
+        <View style={{backgroundColor: 'white', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Help</Text>
+        </View>
+        <View style={{backgroundColor: 'purple', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Inbox</Text>
+        </View>
+        <View style={{backgroundColor: 'blue', flex:1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Account</Text>
+        </View>
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  bottomBar: {
+    backgroundColor: 'red',
+    height: 54,
+    flexDirection: 'row'
+  },
+
+  container: {
+    flex: 1
+  },
+
+  content: {
+    flex: 1,
+    backgroundColor: 'pink'
+  },
+
   scrollView: {
     backgroundColor: Colors.lighter,
   },
